@@ -4,6 +4,7 @@
 This project is a blog application built with React, Node.js, and Mongoose. The application allows users to register, log in, create posts, comment on posts, and view their profiles. 
 
 ## Features
+
 - **User Registration and Login**: Users can register and log in using their name, email, and password. Passwords are validated to ensure they meet specific security criteria.
 - **Post Management**: Users can view previously added posts and create new posts once logged in.
 - **Commenting System**: Users can comment on posts and reply to comments.
@@ -21,3 +22,15 @@ This project is a blog application built with React, Node.js, and Mongoose. The 
 - **Database**: Mongoose for MongoDB object modeling.
 - **JWT Authentication**: JSON Web Tokens are used for user authentication. The backend verifies tokens through middleware to ensure secure access.
 - **MVC Architecture**: The application is organized using the Model-View-Controller architecture for better code organization and separation of concerns.
+
+## Security
+
+Security is a top priority in this application. The following measures have been implemented to ensure the protection of user data and application integrity:
+
+- **Password Hashing**: User passwords are securely hashed using bcrypt before being stored in the database. This ensures that even if the database is compromised, user passwords remain secure.
+  
+- **JWT Authentication**: The application uses JSON Web Tokens (JWT) for user authentication. Tokens are generated upon successful login and stored in cookies. The backend verifies these tokens to authenticate users and protect routes.
+  
+- **Input Validation**: All user inputs, including registration and post data, are validated to prevent malicious inputs and ensure that they meet the application’s requirements.
+  
+- **Protected Routes**: Routes that require authentication are protected by middleware. If a user attempts to access these routes without a valid JWT, they will be denied access.
